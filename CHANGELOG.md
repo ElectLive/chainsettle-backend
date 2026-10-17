@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - CHANGELOG.md now tracks API changes for frontend and webhook integrators.
+- Unit tests for `HttpExceptionFilter`, covering `HttpException` status mapping, body-parser errors, 500 masking without stack leakage, i18n message translation and `X-Request-ID` correlation (#526).
 - `?fields=` sparse fieldsets on `GET /shipments` and `GET /shipments/:id`; `id` is always returned and unknown fields return 400 with the valid options (#390).
 - `GET /users/:stellarAddress/performance` — on-time milestone rate, dispute rate, proof-to-confirm hours and completed USD volume, with `?role=SUPPLIER|LOGISTICS` and `?since=`; cached for 1 hour, volume visible only to counterparties (#391).
 - Milestone checklists under `/shipments/:shipmentId/milestones/:index/checklist`; proof submission returns a `CHECKLIST_INCOMPLETE` warning, and templates carry checklists into new shipments (#392).
